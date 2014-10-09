@@ -48,6 +48,10 @@ public class HTTPClient {
             // Cool, I have a response! Get it and do something
             System.out.println("Get response3...");
             HttpResponse response3 = responseTry.get();
+			byte[] bytes;
+			bytes=response3.getContent().array();
+			String s = new String(bytes);
+			System.out.println(s);
         } else {
             // Throw an exception
             Throwable throwable = ((Throw) responseTry).e();
